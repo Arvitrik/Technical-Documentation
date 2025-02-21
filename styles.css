@@ -1,0 +1,271 @@
+/*
+=============== 
+IMPORT FONTS
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap");
+
+/*
+=============== 
+GLOBAL VARIABLES
+===============
+*/
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+/*
+=============== 
+NAVIGATION
+===============
+*/
+.nav-top {
+  width: 250px;
+  height: 100%;
+  border-right: 0.125rem solid #8181815f;
+  margin-right: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  z-index: 3;
+  background: #f0f0f0;
+}
+
+.nav-top header {
+  font-size: xx-large;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  margin: 2rem 1rem;
+}
+
+.nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+  min-height: 100%vh;
+  cursor: pointer;
+}
+
+.nav-ul li:first-child {
+  border-top: 0.25rem solid #8181815f;
+}
+
+.nav-ul li {
+  border-bottom: 0.25rem solid #8181815f;
+  line-height: 2;
+}
+
+.nav-ul li a {
+  font-size: large;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  color: aqua;
+  transition: all 0.3s ease-in;
+}
+
+.nav-ul li a:hover {
+  background: #888;
+  color: #f0f0f0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.nav-ul li a:visited {
+  color: #71f274;
+}
+
+/*
+=============== 
+MAIN CONTENT
+===============
+*/
+.main-content {
+  padding-left: 270px;
+  max-width: 1400px;
+  margin: auto;
+  text-align: justify;
+}
+
+.section-main {
+  position: relative;
+}
+
+.section-main header {
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 500;
+  padding: 1rem 1rem 0 1rem;
+  display: block;
+  color: rgba(129, 129, 129, 0.5);
+}
+
+.underline {
+  width: 270px;
+  height: 0.2rem;
+  border-top: 1.8px solid rgba(129, 129, 129, 0.75);
+  border-bottom: 1.8px solid rgba(129, 129, 129, 0.75);
+}
+
+p {
+  text-align: justify;
+  line-height: 1.6;
+  padding: 0 25px;
+}
+
+p::first-letter {
+  font-size: xx-large;
+  font-style: italic;
+  color: #888;
+  padding-left: 15px;
+}
+
+.fact {
+  border: 3px solid #888;
+  padding: 0.4rem;
+  margin: 1rem;
+}
+
+/*
+=============== 
+CODE EXAMPLES
+===============
+*/
+
+code {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.code-examples {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 95%;
+  margin: auto;
+  background-color: #f0f0f0;
+  font-size: 18px;
+}
+
+.code-examples > * {
+  flex: 1 1 auto; /* grow shrink basis - All items have 100% width within tabs class*/
+}
+
+.code-heading {
+  padding-left: 20%;
+  font-style: italic;
+  font-size: x-large;
+  text-decoration: underline;
+  margin: 3px;
+  color: #333;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid black;
+  justify-content: space-evenly;
+}
+
+.tabLinks {
+  width: 100%;
+  font-size: x-large;
+  background-color: inherit;
+  color: #222;
+  transition: all 0.3s ease-in;
+}
+
+.tabLinks:hover,
+.active {
+  background-color: #888;
+  color: #f0f0f0;
+}
+
+.tabContents {
+  display: none;
+  font-size: large;
+  border: 1px solid #222;
+  animation: fadeInEffect 1s;
+}
+
+/*
+=============== 
+    ANIMATION
+===============
+*/
+/* Animates Display none --> block  */
+@keyframes fadeInEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+=============== 
+MEDIA QUERY: 701PX TO 1000PX
+===============
+*/
+@media screen and (max-width: 1000px) {
+  .nav-top {
+    width: 150px;
+  }
+
+  .main-content {
+    padding-left: 175px;
+  }
+
+  p {
+    line-height: 1.3;
+  }
+
+  .code-examples {
+    max-width: 99%;
+  }
+}
+
+/*
+=============== 
+MEDIA QUERY: 0PX TO 700PX
+===============
+*/
+@media screen and (max-width: 700px) {
+  .nav-top {
+    height: 300px;
+    width: 100%;
+  }
+
+  .main-content {
+    margin-top: 310px;
+    padding-left: 5px;
+  }
+
+  pre {
+    text-wrap: balance;
+  }
+}
